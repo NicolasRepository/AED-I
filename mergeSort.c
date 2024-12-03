@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void merge(int vetor[10], int esq, int meio, int dir){
+void merge(int vetor[], int esq, int meio, int dir){
     int n1 = meio - esq + 1;
     int n2 = dir - meio;
     int v1[n1], v2[n2];
@@ -36,7 +36,7 @@ void merge(int vetor[10], int esq, int meio, int dir){
     }
 }
 
-void mergeSort(int vetor[10], int esq, int dir){
+void mergeSort(int vetor[], int esq, int dir){
     if(esq < dir){
         int meio = (esq+dir)/2;
         mergeSort(vetor, esq, meio);
@@ -45,7 +45,7 @@ void mergeSort(int vetor[10], int esq, int dir){
     }
 }
 
-void printVetor(int vetor[10], int n){
+void printVetor(int vetor[], int n){
     for(int i = 0; i < n; i++){
         printf("%d ", vetor[i]);
     }
@@ -53,8 +53,13 @@ void printVetor(int vetor[10], int n){
 }
 
 int main(){
-    int vetor[10] = {4, 5, 6, 2, 4, 7, 8, 33, 1, 9};
+    int n;
+    scanf("%d", &n);
+    int vetor[n];
+    for(int i = 0; i < n; i++){
+        vetor[i] = rand() % 1000;
+    }
     printVetor(vetor, 10);
-    mergeSort(vetor, 0, 9);
+    mergeSort(vetor, 0, n-1);
     printVetor(vetor, 10);
 }

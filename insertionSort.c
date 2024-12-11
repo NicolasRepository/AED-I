@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 void insertionSort(int vetor[10], int n){
     int pivo, j;

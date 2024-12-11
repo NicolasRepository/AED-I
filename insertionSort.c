@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 
-void insertionSort(int vetor[10], int n){
+void insertionSort(int vetor[], int n){
     int pivo, j;
     for(int i = 1; i < n; i++){
         pivo = vetor[i];
@@ -14,7 +14,7 @@ void insertionSort(int vetor[10], int n){
     }
 }
 
-void printVetor(int vetor[10], int n){
+void printVetor(int vetor[], int n){
     for(int i = 0; i < n; i++){
         printf("%d ", vetor[i]);
     }

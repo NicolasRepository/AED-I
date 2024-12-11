@@ -38,7 +38,7 @@ void printVetor(int vetor[], int n){
 }
 
 int main(){
-    int n = 40000;
+    int n = 20000;
     clock_t inicio, fim;
     double tempo;
     int vetor[n];

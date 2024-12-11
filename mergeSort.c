@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 void merge(int vetor[], int esq, int meio, int dir){
     int n1 = meio - esq + 1;
@@ -53,13 +54,17 @@ void printVetor(int vetor[], int n){
 }
 
 int main(){
-    int n;
-    scanf("%d", &n);
+    int n = 20000;
+    clock_t inicio, fim;
+    double tempo;
     int vetor[n];
     for(int i = 0; i < n; i++){
-        vetor[i] = rand() % 1000;
+        vetor[i] = rand() % 1000000;
     }
-    printVetor(vetor, 10);
+    inicio = clock();
     mergeSort(vetor, 0, n-1);
-    printVetor(vetor, 10);
+    fim = clock();
+    tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    printVetor(vetor, n);
+    printf("tempo: %f segundos", tempo);
 }

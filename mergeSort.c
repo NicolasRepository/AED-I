@@ -65,6 +65,5 @@ int main(){
     mergeSort(vetor, 0, n-1);
     fim = clock();
     tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    printVetor(vetor, n);
     printf("tempo: %f segundos", tempo);
 }

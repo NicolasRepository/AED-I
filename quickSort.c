@@ -38,7 +38,7 @@ void printVetor(int vetor[], int n){
 }
 
 int main(){
-    int n = 20000;
+    int n = 40000;
     clock_t inicio, fim;
     double tempo;
     int vetor[n];
@@ -50,6 +50,5 @@ int main(){
     quickSort(vetor, 0, n-1);
     fim = clock();
     tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    printVetor(vetor, n);
     printf("tempo: %f segundos", tempo);
 }

@@ -4,7 +4,8 @@
 void merge(int vetor[], int esq, int meio, int dir){
     int n1 = meio - esq + 1;
     int n2 = dir - meio;
-    int v1[n1], v2[n2];
+    int *v1 = malloc(n1 * sizeof(int));
+    int *v2 = malloc(n2 * sizeof(int));
 
     for(int i = 0; i < n1; i++){
         v1[i] = vetor[esq + i];
@@ -35,6 +36,8 @@ void merge(int vetor[], int esq, int meio, int dir){
         j++;
         k++;
     }
+    free(v1);
+    free(v2);
 }
 
 void mergeSort(int vetor[], int esq, int dir){

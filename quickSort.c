@@ -45,7 +45,6 @@ int main(){
     for(int i = 0; i < n; i++){
         vetor[i] = rand() % 1000000;
     }
-    printVetor(vetor, n);
     inicio = clock();
     quickSort(vetor, 0, n-1);
     fim = clock();

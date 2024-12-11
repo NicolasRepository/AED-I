@@ -21,8 +21,18 @@ void printVetor(int vetor[10], int n){
 }
 
 int main(){
-    int vetor[10] = {4, 5, 6, 2, 4, 7, 8, 33, 1, 9};
-    printVetor(vetor, 10);
-    insertionSort(vetor, 10);
-    printVetor(vetor, 10);
+    int n = 20000;
+    clock_t inicio, fim;
+    double tempo;
+    int vetor[n];
+    for(int i = 0; i < n; i++){
+        vetor[i] = rand() % 1000000;
+    }
+    printVetor(vetor, n);
+    inicio = clock();
+    insertionSort(vetor, n);
+    fim = clock();
+    tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    printVetor(vetor, n);
+    printf("tempo: %f segundos", tempo);
 }

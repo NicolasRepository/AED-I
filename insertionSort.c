@@ -29,11 +29,9 @@ int main(){
     for(int i = 0; i < n; i++){
         vetor[i] = rand() % 1000000;
     }
-    printVetor(vetor, n);
     inicio = clock();
     insertionSort(vetor, n);
     fim = clock();
     tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    printVetor(vetor, n);
     printf("tempo: %f segundos", tempo);
 }

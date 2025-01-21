@@ -29,8 +29,8 @@ void inserir(No **no2, int valor, No **min_stack){
     }
 }
 
-void retirar(No **no2, No **min_stack) {
-    if (*no2 == NULL) {
+void retirar(No **no2, No **min_stack){
+    if(*no2 == NULL){
         printf("EMPTY\n");
         return;
     }

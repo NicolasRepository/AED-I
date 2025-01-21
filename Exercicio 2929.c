@@ -2,24 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct no {
+typedef struct no{
     int valor;
     struct no *prox;
 } No;
 
-void inserir(No **no2, int valor, No **min_stack) {
+void inserir(No **no2, int valor, No **min_stack){
     No *novo = malloc(sizeof(No));
-    if (novo) {
+    if (novo){
         novo->valor = valor;
         novo->prox = *no2;
         *no2 = novo;
 
-        if (*min_stack == NULL || valor < (*min_stack)->valor) {
+        if(*min_stack == NULL || valor < (*min_stack)->valor){
             No *novo_min = malloc(sizeof(No));
             novo_min->valor = valor;
             novo_min->prox = *min_stack;
             *min_stack = novo_min;
-        } else {
+        }
+        else{
             No *novo_min = malloc(sizeof(No));
             novo_min->valor = (*min_stack)->valor;
             novo_min->prox = *min_stack;
@@ -44,24 +45,25 @@ void retirar(No **no2, No **min_stack) {
     free(temp);
 }
 
-void min(No *min_stack) {
-    if (min_stack == NULL) {
+void min(No *min_stack){
+    if (min_stack == NULL){
         printf("EMPTY\n");
-    } else {
+    }
+    else{
         printf("%d\n", min_stack->valor);
     }
 }
 
-void liberarLista(No *no) {
+void liberarLista(No *no){
     No *aux;
-    while (no != NULL) {
+    while (no != NULL){
         aux = no;
         no = no->prox;
         free(aux);
     }
 }
 
-int main() {
+int main(){
     int n, traducao;
     char linha[16];
     No *lista = NULL;
@@ -70,17 +72,19 @@ int main() {
     scanf("%d", &n);
     getchar();
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++){
         fgets(linha, sizeof(linha), stdin);
-        if (linha[0] == 'P') {
-            if (linha[1] == 'U') {
+        if (linha[0] == 'P'){
+            if (linha[1] == 'U'){
                 char *inicio = linha + 5;
                 traducao = strtol(inicio, NULL, 10);
                 inserir(&lista, traducao, &min_stack);
-            } else {
+            }
+            else{
                 retirar(&lista, &min_stack);
             }
-        } else {
+        }
+        else{
             min(min_stack);
         }
     }

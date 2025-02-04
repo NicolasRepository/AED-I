@@ -17,9 +17,8 @@ int main(){
             else if(grafo[x * m + y] > 0){
                 arestasT++;
             }
-            else{
-                grafo[x * m + y] = grafo[y * m + x] = 1;
-            }
+            grafo[x * m + y]++;
+            grafo[y * m + x]++;
         }
         free(grafo);
         printf("%d\n", arestasT*2);

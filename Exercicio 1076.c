@@ -14,9 +14,6 @@ int main(){
             if(grafo[x * m + y] % 2 == 1){
                 arestasT--;
             }
-            else if(grafo[x * m + y] > 0){
-                arestasT++;
-            }
             grafo[x * m + y]++;
             grafo[y * m + x]++;
         }
